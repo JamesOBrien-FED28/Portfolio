@@ -1,0 +1,139 @@
+/*Declaring the downloaded font*/
+@font-face {
+    font-family: "fifteentwenty";
+    src: url("./fonts/FifteenTwenty-Bold.otf");
+}
+
+body {
+    font-family: "fifteentwenty";
+    background-color: black;
+}
+
+h1 {
+    color: magenta;
+    font-size: clamp(48px, 10vw, 132px);
+    text-align: center;
+}
+
+.load-text {
+    padding: 3%;
+    font-size: 32px;
+    height: 500px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 45px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.title {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/****************************/
+/*Animated text - typewriter*/
+/****************************/
+
+/*Defines initial empty 'content' string, animation length and loop*/
+.typewriter::before {
+    content: "";
+    /*Creates invisible element for the text string*/
+    animation-name: typing;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/*Creates the cursor effect*/
+.typewriter::after {
+    content: "";
+    /*Creates invisible element to hold the cursor*/
+    border-right-width: 1ch;
+    border-right-style: solid;
+    border-right-color: currentColor;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    vertical-align: 20px;
+    /*Offsets cursor height to align with text*/
+}
+
+/*Keyframe animation simulating typing by swapping out the content string*/
+@keyframes typing {
+    0% {
+        content: "";
+    }
+
+    5% {
+        content: "J";
+    }
+
+    10% {
+        content: "Ja";
+    }
+
+    15% {
+        content: "Jam";
+    }
+
+    20% {
+        content: "Jame";
+    }
+
+    25% {
+        content: "James";
+    }
+
+    30% {
+        content: "James ";
+    }
+
+    35% {
+        content: "James O";
+    }
+
+    40% {
+        content: "James O'";
+    }
+
+    45% {
+        content: "James O'B";
+    }
+
+    50% {
+        content: "James O'Br";
+    }
+
+    55% {
+        content: "James O'Bri";
+    }
+
+    60% {
+        content: "James O'Brie";
+    }
+
+    65%,
+    100% {
+        content: "James O'Brien";
+    }
+}
+
+/*Keyframe animation for the blinking cursor, toggles opacity*/
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
